@@ -58,7 +58,7 @@
 @media (max-width: 480px) {
   /* Navbar Container - Ensures everything stays inside */
   .navbar {
-    height: 70px; /* Slightly increased for better fit */
+    height: 90px; /* Slightly increased for better fit */
     padding: 6px 12px;
     display: flex;
     justify-content: space-between;
