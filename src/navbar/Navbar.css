@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   padding: 15px 30px;
-  background: linear-gradient(90deg, #a3349c, #d3e68e);
+  background: linear-gradient(90deg, #7d727c, #d3e68e);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   display: flex;
@@ -37,7 +37,7 @@
 
 .navbar-subtitle {
   font-size: 1rem;
-  color: #555;
+  color: #765909;
   margin: 5px 0 0;
 }
 
