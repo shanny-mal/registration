@@ -1,11 +1,11 @@
-/* 🌟 Modern Navbar - Improved for Small Screens */
+/* 🌟 Modern Navbar - Fits All Contents */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* Reduced height for a sleek look */
-  padding: 8px 15px;
+  height: 55px; /* Reduced height for a sleek, compact look */
+  padding: 6px 12px;
   background: linear-gradient(90deg, #7d727c, #d3e68e);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -15,19 +15,21 @@
   transition: all 0.3s ease-in-out;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  overflow: hidden; /* Ensures no content spills out */
 }
 
-/* 🚀 Navbar Left (Logo Section) */
+/* 🚀 Navbar Left (Logo & Title Group) */
 .navbar-left {
   display: flex;
   align-items: center;
+  gap: 8px; /* Adds spacing between logo & title */
+  flex-shrink: 0; /* Prevents shrinking */
 }
 
 /* 📌 Navbar Logo */
 .navbar-logo {
-  width: 35px; /* Smaller for mobile */
+  width: 28px; /* Reduced size for better fit */
   height: auto;
-  margin-right: 10px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -38,28 +40,28 @@
 
 /* 📌 Navbar Title */
 .navbar-title {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;
-  white-space: nowrap; /* Prevents wrapping */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; /* Adds "..." if too long */
 }
 
 /* 📌 Navbar Links */
 .navbar-links {
   display: flex;
-  gap: 8px;
-  flex-wrap: nowrap; /* Prevents breaking on small screens */
+  gap: 6px;
+  flex-wrap: nowrap; /* Ensures all links fit */
 }
 
 .navbar-links a {
-  font-size: 0.75rem; /* Optimized size */
+  font-size: 0.7rem;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  padding: 5px 8px;
+  padding: 3px 5px;
   transition: color 0.3s ease-in-out;
 }
 
@@ -67,41 +69,68 @@
   color: #f1c40f;
 }
 
-/* 📌 Mobile Menu Icon (If Needed) */
+/* 📌 Mobile Menu Icon (For Small Screens) */
 .menu-icon {
-  display: block;
+  display: none; /* Hide by default */
   font-size: 1.2rem;
   color: #fff;
   cursor: pointer;
   margin-left: 10px;
 }
 
-/* Hides menu links if too many items exist */
-.navbar-links.hide {
-  display: none;
-}
-
 /* 🔥 Responsive Design for Small Screens */
 @media (max-width: 480px) {
   .navbar {
-    height: 55px; /* Further reduced for better spacing */
-    padding: 6px 12px;
+    height: 50px; /* Further reduced for better spacing */
+    padding: 5px 10px;
   }
 
-  .navbar-logo {
-    width: 30px;
-  }
-
-  .navbar-title {
-    font-size: 0.75rem;
-  }
-
-  .navbar-links {
+  .navbar-left {
     gap: 6px;
   }
 
-  .navbar-links a {
+  .navbar-logo {
+    width: 25px;
+  }
+
+  .navbar-title {
     font-size: 0.7rem;
-    padding: 3px 5px;
+  }
+
+  .navbar-links {
+    gap: 4px;
+  }
+
+  .navbar-links a {
+    font-size: 0.65rem;
+    padding: 2px 4px;
+  }
+
+  /* 📌 Show Hamburger Menu if too many links */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide links on very small screens */
+  .navbar-links {
+    display: none;
+  }
+
+  /* Show links when menu is clicked */
+  .navbar-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .navbar-links.active a {
+    display: block;
+    padding: 5px;
+    color: #fff;
   }
 }
