@@ -1,34 +1,40 @@
-/* 🌟 Modern Navbar - Fits All Contents */
+/* Base Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 55px; /* Reduced height for a sleek, compact look */
-  padding: 6px 12px;
+  height: 70px; /* Increased height for better spacing */
+  padding: 10px 30px;
   background: linear-gradient(90deg, #7d727c, #d3e68e);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  overflow: hidden; /* Ensures no content spills out */
+  overflow: hidden;
 }
 
-/* 🚀 Navbar Left (Logo & Title Group) */
-.navbar-left {
+/* Navbar Sections */
+.navbar-left,
+.navbar-right {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 8px; /* Adds spacing between logo & title */
-  flex-shrink: 0; /* Prevents shrinking */
 }
 
-/* 📌 Navbar Logo */
+.navbar-center {
+  flex: 1 1 auto;
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* Logo Styling */
 .navbar-logo {
-  width: 28px; /* Reduced size for better fit */
+  width: 45px;
   height: auto;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -38,99 +44,49 @@
   opacity: 1;
 }
 
-/* 📌 Navbar Title */
+/* Title and Subtitle Styling */
 .navbar-title {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;
+  margin: 0;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Adds "..." if too long */
+  text-overflow: ellipsis;
 }
 
-/* 📌 Navbar Links */
-.navbar-links {
-  display: flex;
-  gap: 6px;
-  flex-wrap: nowrap; /* Ensures all links fit */
-}
-
-.navbar-links a {
-  font-size: 0.7rem;
+.navbar-subtitle {
+  font-size: 0.9rem;
   color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 3px 5px;
-  transition: color 0.3s ease-in-out;
+  margin: 2px 0 0;
 }
 
-.navbar-links a:hover {
-  color: #f1c40f;
-}
-
-/* 📌 Mobile Menu Icon (For Small Screens) */
-.menu-icon {
-  display: none; /* Hide by default */
-  font-size: 1.2rem;
-  color: #fff;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-/* 🔥 Responsive Design for Small Screens */
+/* Responsive Adjustments for Small Screens */
 @media (max-width: 480px) {
   .navbar {
-    height: 50px; /* Further reduced for better spacing */
-    padding: 5px 10px;
+    height: 60px; /* Reduced height for compact design */
+    padding: 6px 15px;
   }
 
-  .navbar-left {
-    gap: 6px;
+  .navbar-left,
+  .navbar-right {
+    flex: 0 0 auto;
   }
 
   .navbar-logo {
-    width: 25px;
+    width: 35px; /* Smaller logos */
+  }
+
+  .navbar-center {
+    padding: 0 8px;
   }
 
   .navbar-title {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 
-  .navbar-links {
-    gap: 4px;
-  }
-
-  .navbar-links a {
-    font-size: 0.65rem;
-    padding: 2px 4px;
-  }
-
-  /* 📌 Show Hamburger Menu if too many links */
-  .menu-icon {
-    display: block;
-  }
-
-  /* Hide links on very small screens */
-  .navbar-links {
-    display: none;
-  }
-
-  /* Show links when menu is clicked */
-  .navbar-links.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border-radius: 6px;
-  }
-
-  .navbar-links.active a {
-    display: block;
-    padding: 5px;
-    color: #fff;
+  .navbar-subtitle {
+    font-size: 0.75rem;
   }
 }
