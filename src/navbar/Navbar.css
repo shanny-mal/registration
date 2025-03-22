@@ -56,10 +56,10 @@
 
 
 @media (max-width: 480px) {
-  /* Sleek & Compact Navbar */
+  /* Navbar Container - Ensures everything stays inside */
   .navbar {
-    height: 45px; /* Further reduced for a slim look */
-    padding: 4px 12px;
+    height: 50px; /* Slightly increased for better fit */
+    padding: 6px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,36 +67,52 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    width: 100%;
+    position: fixed; /* Ensures it stays in place */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Keeps it above other elements */
   }
 
-  /* Navbar Title (Smaller & Clean) */
+  /* Flex Container for Logo, Title & Links */
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Navbar Logo - Adjusted for Mobile */
+  .navbar-logo {
+    width: 30px; /* Reduced for better fit */
+    height: auto;
+    margin-right: 8px;
+  }
+
+  /* Navbar Title - Ensures it doesn’t overflow */
   .navbar-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds "..." if text overflows */
   }
 
-  /* Navbar Logo (Optimized for Mobile) */
-  .navbar-logo {
-    width: 35px; /* Slightly smaller for better proportion */
-    height: auto;
-    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
-  }
-
-  /* Navbar Links - Minimalist */
+  /* Navbar Links - Ensures they fit */
   .navbar-links {
     display: flex;
-    gap: 10px; /* Reduced gap for compact alignment */
+    gap: 8px;
+    flex-wrap: nowrap; /* Prevents wrapping */
   }
 
   .navbar-links a {
-    font-size: 0.8rem;
+    font-size: 0.75rem; /* Smaller for compact look */
     color: #fff;
     text-decoration: none;
     font-weight: 500;
+    padding: 3px 6px;
     transition: color 0.3s ease-in-out;
   }
 
@@ -104,11 +120,17 @@
     color: #f1c40f;
   }
 
-  /* Mobile Menu Icon (Optional - If using a Hamburger Menu) */
+  /* Mobile Menu Icon - If needed */
   .menu-icon {
     display: block;
     font-size: 1.2rem;
     color: #fff;
     cursor: pointer;
+    margin-left: 10px;
+  }
+
+  /* Hides menu links if too many items exist */
+  .navbar-links.hide {
+    display: none;
   }
 }
