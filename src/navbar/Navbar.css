@@ -58,11 +58,14 @@
   .navbar {
     flex-direction: column;
     text-align: center;
+    padding: 10px;
   }
 
   .navbar-left,
   .navbar-right {
-    flex: none;
+    width: 100%;
+    justify-content: center;
+    margin: 5px 0;
   }
 
   .navbar-title {
