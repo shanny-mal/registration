@@ -1,10 +1,24 @@
 .registration-container {
   min-height: 100vh;
-  background-color: #651383; /* Light purple */
+  background: linear-gradient(135deg, #651383, #4b0082); /* Smooth Gradient for Depth */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 80px; /* Space for the fixed navbar */
-  padding-bottom: 80px; /* Space for the fixed footer */
+  justify-content: center; /* Centers the content */
+  padding: 80px 20px; /* Improved padding for better spacing */
   position: relative;
+  overflow: hidden; /* Prevents unwanted scroll issues */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .registration-container {
+    padding: 70px 15px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-container {
+    padding: 60px 10px; /* Further reduced padding */
+  }
 }
