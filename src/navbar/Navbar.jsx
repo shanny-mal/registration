@@ -15,7 +15,7 @@ const Navbar = () => {
       {/* Centered Content */}
       <div className="navbar-center">
         <h2 className="navbar-title">
-          North Zimbabwe Conference Youth Camp Registration
+          NZC Youth Camp Registration
         </h2>
         <h3 className="navbar-subtitle">CHINHOYI-CHEGUTU-HUKAMA</h3>
       </div>
