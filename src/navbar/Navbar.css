@@ -56,43 +56,59 @@
 
 
 @media (max-width: 480px) {
-  /* Modern Navbar */
+  /* Sleek & Compact Navbar */
   .navbar {
-    height: 50px; /* Reduced height for compact design */
-    padding: 5px 15px;
+    height: 45px; /* Further reduced for a slim look */
+    padding: 4px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #4a90e2, #34495e);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #4a90e2, #2c3e50);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     transition: all 0.3s ease-in-out;
   }
 
+  /* Navbar Title (Smaller & Clean) */
   .navbar-title {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: #fff;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
+  /* Navbar Logo (Optimized for Mobile) */
   .navbar-logo {
-    width: 40px; /* Reduced logo size for balance */
+    width: 35px; /* Slightly smaller for better proportion */
     height: auto;
+    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.2));
   }
 
+  /* Navbar Links - Minimalist */
   .navbar-links {
     display: flex;
-    gap: 15px;
+    gap: 10px; /* Reduced gap for compact alignment */
   }
 
   .navbar-links a {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #fff;
     text-decoration: none;
+    font-weight: 500;
     transition: color 0.3s ease-in-out;
   }
 
   .navbar-links a:hover {
     color: #f1c40f;
+  }
+
+  /* Mobile Menu Icon (Optional - If using a Hamburger Menu) */
+  .menu-icon {
+    display: block;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
   }
 }
