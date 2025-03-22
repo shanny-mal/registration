@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
 import RegistrationCard from "./RegistrationCard";
-import Footer from "../Footer/Footer";
+import Footer from "../footer/Footer";
 import "../App.css";
 
 const RegistrationPage = () => {
