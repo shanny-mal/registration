@@ -58,12 +58,12 @@
 @media (max-width: 480px) {
   /* Navbar Container - Ensures everything stays inside */
   .navbar {
-    height: 90px; /* Slightly increased for better fit */
+    height: 110px; /* Slightly increased for better fit */
     padding: 6px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #4a90e2, #2c3e50);
+    background: linear-gradient(90deg, #7d727c, #d3e68e);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
