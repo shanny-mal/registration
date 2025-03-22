@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px; /* Increased height */
+  height: 90px; /* Set to 90px */
   padding: 10px 15px;
   background: linear-gradient(90deg, #7d727c, #d3e68e);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -17,147 +17,86 @@
   overflow: hidden;
 }
 
-/* 🚀 Navbar Left (Logos & Title Section) */
-.navbar-left {
+/* 📌 Navbar Sections */
+.navbar-left, .navbar-right {
   display: flex;
   align-items: center;
-  gap: 12px; /* Spacing between logo & title */
   flex-shrink: 0;
 }
 
-/* 📌 Navbar Logos */
+.navbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📌 Logos */
 .navbar-logo {
-  width: 50px; /* Increased for better visibility */
+  width: 55px; /* Adjusted for visibility */
   height: auto;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar-logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   opacity: 1;
 }
 
-/* 📌 Navbar Title */
+/* 📌 Title */
 .navbar-title {
-  font-size: 1.1rem; /* Increased for readability */
+  font-size: 1.2rem;
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 320px; /* Prevents overflow issues */
 }
 
-/* 📌 Navbar Links */
-.navbar-links {
-  display: flex;
-  gap: 15px;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-
-.navbar-links a {
-  font-size: 0.9rem;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 10px;
-  transition: color 0.3s ease-in-out;
-}
-
-.navbar-links a:hover {
-  color: #f1c40f;
-}
-
-/* 📌 Mobile Menu Icon */
-.menu-icon {
-  display: none; /* Hidden by default */
-  font-size: 1.8rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* 🔥 Responsive Design for Small Screens */
-@media (max-width: 768px) {
-  .navbar {
-    height: 85px; /* Slightly reduced */
-    padding: 8px 12px;
-  }
-
-  .navbar-left {
-    gap: 8px;
+/* 🔥 Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-title {
+    font-size: 1.1rem;
   }
 
   .navbar-logo {
-    width: 40px; /* Adjusted for better fit */
-  }
-
-  .navbar-title {
-    font-size: 0.95rem;
-    max-width: 250px;
-  }
-
-  .navbar-links {
-    gap: 8px;
-  }
-
-  .navbar-links a {
-    font-size: 0.8rem;
-    padding: 5px 8px;
-  }
-
-  /* 📌 Show Mobile Menu Icon */
-  .menu-icon {
-    display: block;
-  }
-
-  /* Hide links on smaller screens */
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 90px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 12px;
-    border-radius: 6px;
-    text-align: right;
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-
-  .navbar-links a {
-    display: block;
-    padding: 10px;
+    width: 50px;
   }
 }
 
-/* 🔥 Extra Small Screens (Mobile) */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .navbar {
     height: 80px;
-    padding: 6px 10px;
+    padding: 8px 12px;
   }
 
-  .navbar-left {
-    flex-direction: column;
+  .navbar-title {
+    font-size: 1rem;
+    max-width: 80%;
     text-align: center;
   }
 
   .navbar-logo {
-    width: 35px; /* Adjusted for mobile */
+    width: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 75px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6px 10px;
+  }
+
+  .navbar-logo {
+    width: 40px; /* Smaller for mobile */
   }
 
   .navbar-title {
     font-size: 0.85rem;
-    max-width: 200px;
-  }
-
-  .navbar-links {
-    top: 80px;
-    right: 5px;
+    max-width: 70%;
   }
 }
