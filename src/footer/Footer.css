@@ -40,3 +40,55 @@
   color: #000;
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .page-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer-date,
+  .footer-location {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .footer-ay-logo {
+    margin: 10px 0;
+  }
+
+  .ay-logo {
+    width: 60px;
+  }
+
+  .footer-powered {
+    font-size: 0.75rem;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .footer-date,
+  .footer-location {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  .footer-date i,
+  .footer-location i {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .ay-logo {
+    width: 50px;
+  }
+
+  .footer-powered {
+    font-size: 0.7rem;
+  }
+}
