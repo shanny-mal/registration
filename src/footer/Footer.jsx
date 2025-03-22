@@ -12,7 +12,7 @@ const Footer = () => {
         KAROI
       </div>
       <div className="footer-ay-logo">
-        <img src="src/assets/AY-logo.png" alt="AY Logo" className="ay-logo" />
+        <img src="/AY-logo.png" alt="AY Logo" className="ay-logo" />
       </div>
       <div className="footer-powered">
         ©2025 Powered by Adventist Youth Ministries

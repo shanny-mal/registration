@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-left">
         <img
-          src="src/assets/adventist-logo.png"
+          src="/adventist-logo.png"
           alt="Adventist Logo"
           className="navbar-logo"
         />
@@ -22,7 +22,7 @@ const Navbar = () => {
 
       <div className="navbar-right">
         <img
-          src="src/assets/SYL-logo.png"
+          src="/SYL-logo.png"
           alt="SYL Logo"
           className="navbar-logo"
         />
