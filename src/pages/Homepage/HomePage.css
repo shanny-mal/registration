@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; /* To allow positioning of registration box */
 }
 
 /* Add extra margin for content */
@@ -32,31 +31,31 @@
   font-family: 'Roboto', sans-serif; /* Modern font family */
 }
 
-/* Registration Box */
+/* Registration box */
 .registration-box {
   position: absolute;
-  top: 30%;
-  right: 10px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 150px;
   font-family: 'Roboto', sans-serif;
 }
 
 .registration-box h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 700;
   color: #4b0082;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .registration-box p {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #651383;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
 }
 
 /* Media queries for smaller screens */
@@ -70,13 +69,15 @@
     font-size: 2rem; /* Slightly smaller on medium screens */
   }
 
+  /* Move the registration box to the bottom for medium screens */
   .registration-box {
-    position: static; /* Remove absolute positioning */
-    margin-top: 20px;
-    width: auto;
-    text-align: left;
-    padding: 15px;
-    margin: 0 auto;
+    position: relative;
+    top: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
   }
 }
 
@@ -90,10 +91,9 @@
     letter-spacing: 1px;
   }
 
+  /* Move the registration box to the bottom for small screens */
   .registration-box {
-    position: static; /* Make it appear at the bottom */
-    width: 100%; /* Full width for mobile */
-    margin-top: 30px;
-    padding: 15px;
+    width: 90%;
+    padding: 1.5rem;
   }
 }

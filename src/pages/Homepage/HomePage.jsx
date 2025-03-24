@@ -15,14 +15,13 @@ const HomePage = () => {
         </p>
         {/* Add INTERFED YOUTH CAMP statement */}
         <h2 className="interfed-title">INTERFED YOUTH CAMP</h2>
+        {/* Registration box */}
+        <div className="registration-box">
+          <h3>REG</h3>
+          <p>$10</p>
+        </div>
+        {/* Add more homepage content as needed */}
       </div>
-
-      {/* REG $10 Box */}
-      <div className="reg-box">
-        <h3>REG</h3>
-        <p>$10</p>
-      </div>
-
       <Footer />
     </div>
   );
