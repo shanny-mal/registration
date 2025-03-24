@@ -17,6 +17,11 @@ const schema = z.object({
   district: z.string().min(2, "District is required"),
   federation: z.string().min(2, "Federation is required"),
   status: z.enum(["Adventist", "Pre-Advent"], { message: "Select a status" }),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z
+    .string()
+    .min(10, "Phone number must be at least 10 digits")
+    .optional(), // Optional phone number
 });
 
 const RegistrationCard = () => {
@@ -37,6 +42,8 @@ const RegistrationCard = () => {
       district: data.district,
       federation: data.federation,
       status: data.status,
+      email: data.email,
+      phone: data.phone,
     };
 
     try {
@@ -64,6 +71,7 @@ const RegistrationCard = () => {
   return (
     <div className="registration-card">
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        {/* First Name Field */}
         <div className="form-group">
           <label htmlFor="firstName" className="form-label">
             First Name
@@ -78,6 +86,8 @@ const RegistrationCard = () => {
             <p className="error">{errors.firstName.message}</p>
           )}
         </div>
+
+        {/* Surname Field */}
         <div className="form-group">
           <label htmlFor="surname" className="form-label">
             Surname
@@ -90,6 +100,8 @@ const RegistrationCard = () => {
           />
           {errors.surname && <p className="error">{errors.surname.message}</p>}
         </div>
+
+        {/* Sex Field */}
         <div className="form-group">
           <label htmlFor="sex" className="form-label">
             Sex
@@ -102,6 +114,8 @@ const RegistrationCard = () => {
           </select>
           {errors.sex && <p className="error">{errors.sex.message}</p>}
         </div>
+
+        {/* Date of Birth Field */}
         <div className="form-group">
           <label htmlFor="dob" className="form-label">
             Date of Birth
@@ -114,6 +128,8 @@ const RegistrationCard = () => {
           />
           {errors.dob && <p className="error">{errors.dob.message}</p>}
         </div>
+
+        {/* Church Field */}
         <div className="form-group">
           <label htmlFor="church" className="form-label">
             Name of Church
@@ -126,6 +142,8 @@ const RegistrationCard = () => {
           />
           {errors.church && <p className="error">{errors.church.message}</p>}
         </div>
+
+        {/* District Field */}
         <div className="form-group">
           <label htmlFor="district" className="form-label">
             District
@@ -140,6 +158,8 @@ const RegistrationCard = () => {
             <p className="error">{errors.district.message}</p>
           )}
         </div>
+
+        {/* Federation Field */}
         <div className="form-group">
           <label htmlFor="federation" className="form-label">
             Federation
@@ -154,6 +174,8 @@ const RegistrationCard = () => {
             <p className="error">{errors.federation.message}</p>
           )}
         </div>
+
+        {/* Status Field */}
         <div className="form-group">
           <label htmlFor="status" className="form-label">
             Adventist / Pre-Advent
@@ -165,6 +187,36 @@ const RegistrationCard = () => {
           </select>
           {errors.status && <p className="error">{errors.status.message}</p>}
         </div>
+
+        {/* Email Field */}
+        <div className="form-group">
+          <label htmlFor="email" className="form-label">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            {...register("email")}
+            className="form-control"
+          />
+          {errors.email && <p className="error">{errors.email.message}</p>}
+        </div>
+
+        {/* Phone Field */}
+        <div className="form-group">
+          <label htmlFor="phone" className="form-label">
+            Phone Number
+          </label>
+          <input
+            type="text"
+            id="phone"
+            {...register("phone")}
+            className="form-control"
+          />
+          {errors.phone && <p className="error">{errors.phone.message}</p>}
+        </div>
+
+        {/* Submit Button */}
         <button type="submit" className="btn-submit" disabled={isSubmitting}>
           {isSubmitting ? "Registering..." : "Register"}
         </button>
