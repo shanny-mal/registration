@@ -1,3 +1,8 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 .registration-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #651383, #4b0082);
