@@ -1,20 +1,25 @@
 .homepage-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #651383, #4b0082);
-  padding-top: 100px; /* space for fixed navbar */
-  padding-bottom: 100px; /* space for fixed footer */
+  padding-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .homepage-content {
-  width: 100%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 500px;
   background: #fff;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.8rem;
   margin: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .homepage-content {
+    padding: 1.5rem;
+  }
 }
