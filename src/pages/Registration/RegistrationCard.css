@@ -61,6 +61,17 @@
   outline: none;
 }
 
+.registration-message {
+  margin-bottom: 1rem;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4caf50; /* Or adjust dynamically based on success/error */
+}
+
+
 /* Submit Button - Enhanced */
 .btn-submit {
   width: 100%;

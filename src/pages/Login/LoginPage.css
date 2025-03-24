@@ -35,6 +35,25 @@
   margin-top: 80px; /* Adjust space between navbar and form */
 }
 
+/* Success and Error message styles */
+.message {
+  margin: 1rem 0;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.message.success {
+  background-color: #4caf50; /* Green for success */
+  color: white;
+}
+
+.message.error {
+  background-color: #f44336; /* Red for error */
+  color: white;
+}
+
 /* Form control styles */
 .form-control {
   width: 100%;

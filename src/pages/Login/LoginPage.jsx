@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -10,6 +10,8 @@ import "./LoginPage.css";
 const LoginPage = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext); // Use login function from AuthContext
+  const [message, setMessage] = useState(""); // For success and error messages
+  const [messageType, setMessageType] = useState(""); // To differentiate between success and error messages
   const {
     register,
     handleSubmit,
@@ -32,7 +34,9 @@ const LoginPage = () => {
       // Use AuthContext to handle login state
       login(response.data.access, response.data.user.is_admin); // Call login from context
 
-      alert("Login successful!");
+      // Display success message
+      setMessage("Login successful! Redirecting...");
+      setMessageType("success");
 
       // Redirect based on role
       if (response.data.user.is_admin) {
@@ -45,7 +49,8 @@ const LoginPage = () => {
         "Login error:",
         error.response ? error.response.data : error.message
       );
-      alert("Login failed! Check credentials.");
+      setMessage("Login failed! Please check your credentials and try again.");
+      setMessageType("error");
     }
   };
 
@@ -54,6 +59,14 @@ const LoginPage = () => {
       <Navbar />
       <div className="login-card">
         <h2>Login</h2>
+
+        {/* Display Success or Error Message */}
+        {message && (
+          <div className={`message ${messageType}`}>
+            <p>{message}</p>
+          </div>
+        )}
+
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="form-group">
             <label htmlFor="email">Email</label>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -21,7 +21,7 @@ const schema = z.object({
   phone: z
     .string()
     .min(10, "Phone number must be at least 10 digits")
-    .optional(), // Optional phone number
+    .optional(),
 });
 
 const RegistrationCard = () => {
@@ -31,6 +31,7 @@ const RegistrationCard = () => {
     formState: { errors, isSubmitting },
     reset,
   } = useForm({ resolver: zodResolver(schema) });
+  const [message, setMessage] = useState("");
 
   const onSubmit = async (data) => {
     const formattedData = {
@@ -54,14 +55,16 @@ const RegistrationCard = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
-      alert("Registration successful!");
+      setMessage(
+        "Registration successful! Please check your email. An email has also been sent to all admins."
+      );
       reset();
     } catch (error) {
       console.error(
         "Error:",
         error.response ? error.response.data : error.message
       );
-      alert(
+      setMessage(
         error.response?.data?.message ||
           "An error occurred during registration."
       );
@@ -70,6 +73,7 @@ const RegistrationCard = () => {
 
   return (
     <div className="registration-card">
+      {message && <div className="registration-message">{message}</div>}
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         {/* First Name Field */}
         <div className="form-group">
