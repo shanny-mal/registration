@@ -1,12 +1,11 @@
 .homepage-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #651383, #4b0082);
+  padding-top: 110px; /* Space below navbar */
+  padding-bottom: 100px; /* Space for footer */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Align content properly */
-  padding-top: 120px; /* Adjusted to create space below navbar */
-  padding-bottom: 100px; /* Space for footer */
 }
 
 /* Add extra margin for content */

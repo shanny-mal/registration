@@ -4,10 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center content properly */
-  padding-top: 120px; /* Increased to create space below navbar */
+  justify-content: center;
+  padding-top: 110px; /* Ensure space below navbar */
   padding-bottom: 100px; /* Space for footer */
 }
+
 
 /* Add extra margin for the login card */
 .login-card {
