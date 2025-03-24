@@ -9,28 +9,32 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import "./App.css";
 
 const App = () => {
-  // For simplicity, we use localStorage for auth status.
-  const isAuthenticated = localStorage.getItem("authToken");
+  // Convert to boolean properly
+  const isAuthenticated = !!localStorage.getItem("authToken");
   const isAdmin = localStorage.getItem("isAdmin") === "true";
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-
         <Route path="/register" element={<RegistrationPage />} />
-
         <Route path="/login" element={<LoginPage />} />
 
+        {/* Admin panel - only accessible by admins */}
         <Route
           path="/admin"
           element={
-            <ProtectedRoute isAuthenticated={isAuthenticated && isAdmin}>
+            <ProtectedRoute
+              isAuthenticated={isAuthenticated}
+              isAdmin={isAdmin}
+              adminOnly={true}
+            >
               <AdminPanel />
             </ProtectedRoute>
           }
         />
 
+        {/* User panel - accessible by all authenticated users */}
         <Route
           path="/user"
           element={

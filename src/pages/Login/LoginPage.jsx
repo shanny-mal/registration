@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Navbar from "../../components/navbar/Navbar";
@@ -6,6 +7,7 @@ import Footer from "../../components/footer/Footer";
 import "./LoginPage.css";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,25 +16,39 @@ const LoginPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      // Replace with your actual login API endpoint and logic
       const response = await axios.post(
         "http://127.0.0.1:8000/api/users/login/",
-        data,
+        {
+          username: data.email, // Use email as username
+          password: data.password,
+        },
         {
           headers: { "Content-Type": "application/json" },
         }
       );
-      // Save token and any admin flag in localStorage
-      localStorage.setItem("authToken", response.data.token);
-      localStorage.setItem("isAdmin", response.data.is_admin);
+
+      // Save authentication details
+      localStorage.setItem("authToken", response.data.access);
+      localStorage.setItem("refreshToken", response.data.refresh);
+      localStorage.setItem(
+        "isAdmin",
+        response.data.user.is_admin ? "true" : "false"
+      );
+
       alert("Login successful!");
-      // Redirect based on role (e.g., to /admin or /user)
+
+      // Redirect based on role
+      if (response.data.user.is_admin) {
+        navigate("/admin");
+      } else {
+        navigate("/user");
+      }
     } catch (error) {
       console.error(
         "Login error:",
         error.response ? error.response.data : error.message
       );
-      alert("Login failed!");
+      alert("Login failed! Check credentials.");
     }
   };
 
