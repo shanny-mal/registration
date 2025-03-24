@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; /* For absolute positioning of the box */
+  position: relative; /* Enable absolute positioning of reg box */
 }
 
 /* Add extra margin for content */
@@ -32,30 +32,30 @@
   font-family: 'Roboto', sans-serif; /* Modern font family */
 }
 
-/* Styling for REG $10 box */
-.registration-box {
+/* REG $10 Box */
+.reg-box {
   position: absolute;
-  top: 20%;
-  right: 10%;
-  background: #fff;
+  right: 20px;
+  top: 20px;
+  background-color: #fff;
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 150px;
-  font-family: 'Roboto', sans-serif;
+  width: 120px; /* Set a fixed width for the box */
 }
 
-.registration-box h3 {
+.reg-box h3 {
   font-size: 1.5rem;
-  font-weight: 700;
   color: #4b0082;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
-.registration-box p {
-  font-size: 1.2rem;
-  color: #4b0082;
-  margin-top: 0.5rem;
+.reg-box p {
+  font-size: 1.25rem;
+  color: #000;
+  margin: 0;
 }
 
 /* Media queries for smaller screens */
@@ -69,10 +69,10 @@
     font-size: 2rem; /* Slightly smaller on medium screens */
   }
 
-  /* Adjust the position of REG $10 box on medium screens */
-  .registration-box {
-    top: 25%;
-    right: 5%;
+  .reg-box {
+    width: 100px; /* Adjust size on medium screens */
+    right: 10px; /* Reduce the right margin */
+    top: 15px; /* Adjust the top margin */
   }
 }
 
@@ -86,18 +86,17 @@
     letter-spacing: 1px;
   }
 
-  /* Adjust the position of REG $10 box on small screens */
-  .registration-box {
-    top: 30%;
-    right: 2%;
-    width: 130px; /* Smaller width for mobile */
+  .reg-box {
+    width: 80px; /* Smaller box for mobile */
+    top: 10px; /* Adjust the top position */
+    right: 5px; /* Adjust the right position */
   }
 
-  .registration-box h3 {
-    font-size: 1.2rem; /* Adjust heading font size */
+  .reg-box h3 {
+    font-size: 1.2rem; /* Smaller font for header */
   }
 
-  .registration-box p {
-    font-size: 1rem; /* Adjust paragraph font size */
+  .reg-box p {
+    font-size: 1rem; /* Smaller font for price */
   }
 }
