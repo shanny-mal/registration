@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Navbar.css";
 
 const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <nav className="navbar">
@@ -23,28 +28,65 @@ const Navbar = () => {
         <h3 className="navbar-subtitle">CHINHOYI-CHEGUTU-HUKAMA</h3>
       </div>
 
-      {/* Right - Buttons and Hamburger Menu */}
+      {/* Right - SYL Logo */}
       <div className="navbar-right">
-        <div className="navbar-buttons">
-          {/* Show buttons based on authentication status */}
-          {!isAuthenticated ? (
-            <>
-              <Link to="/">
-                <button className="navbar-button">Home</button>
-              </Link>
-              <Link to="/login">
-                <button className="navbar-button">Login</button>
-              </Link>
-              <Link to="/register">
-                <button className="navbar-button">Register</button>
-              </Link>
-            </>
-          ) : (
-            <button onClick={logout} className="navbar-button">
+        <img
+          src="/SYL-logo.png" // SYL Logo path
+          alt="SYL Logo"
+          className="syl-logo"
+        />
+      </div>
+
+      {/* Hamburger Menu Icon for mobile */}
+      <div className="navbar-menu-icon" onClick={toggleMenu}>
+        &#9776;
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      {menuOpen && (
+        <div className="mobile-menu">
+          <Link to="/" onClick={toggleMenu}>
+            <button className="navbar-button">Home</button>
+          </Link>
+          <Link to="/login" onClick={toggleMenu}>
+            <button className="navbar-button">Login</button>
+          </Link>
+          <Link to="/register" onClick={toggleMenu}>
+            <button className="navbar-button">Register</button>
+          </Link>
+          {isAuthenticated && (
+            <button
+              onClick={() => {
+                logout(); // Log out the user
+                toggleMenu(); // Close the mobile menu
+              }}
+              className="navbar-button"
+            >
               Logout
             </button>
           )}
         </div>
+      )}
+
+      {/* Navbar Buttons for larger screens */}
+      <div className="navbar-buttons">
+        {!isAuthenticated ? (
+          <>
+            <Link to="/">
+              <button className="navbar-button">Home</button>
+            </Link>
+            <Link to="/login">
+              <button className="navbar-button">Login</button>
+            </Link>
+            <Link to="/register">
+              <button className="navbar-button">Register</button>
+            </Link>
+          </>
+        ) : (
+          <button onClick={logout} className="navbar-button">
+            Logout
+          </button>
+        )}
       </div>
     </nav>
   );
