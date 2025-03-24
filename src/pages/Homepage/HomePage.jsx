@@ -13,7 +13,14 @@ const HomePage = () => {
           This is the official homepage of the NZC Youth Camp. Here you’ll find
           all the details, latest updates, and useful links.
         </p>
+        {/* Add INTERFED YOUTH CAMP statement */}
+        <h2 className="interfed-title">INTERFED YOUTH CAMP</h2>
         {/* Add more homepage content as needed */}
+      </div>
+      {/* Add the REG $10 box */}
+      <div className="registration-box">
+        <h3>REG</h3>
+        <p>$10</p>
       </div>
       <Footer />
     </div>

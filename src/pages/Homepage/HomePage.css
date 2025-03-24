@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; /* For absolute positioning of the box */
 }
 
 /* Add extra margin for content */
@@ -20,9 +21,83 @@
   margin-top: 20px; /* Extra space below navbar */
 }
 
+/* INTERFED YOUTH CAMP statement */
+.interfed-title {
+  font-size: 2.5rem; /* Large font size */
+  font-weight: 700;
+  color: #4b0082; /* Stylish purple */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 2rem; /* Add space above the title */
+  font-family: 'Roboto', sans-serif; /* Modern font family */
+}
+
+/* Styling for REG $10 box */
+.registration-box {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 150px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.registration-box h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4b0082;
+}
+
+.registration-box p {
+  font-size: 1.2rem;
+  color: #4b0082;
+  margin-top: 0.5rem;
+}
+
 /* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .homepage-content {
+    width: 95%;
+    max-width: 90%;
+  }
+
+  .interfed-title {
+    font-size: 2rem; /* Slightly smaller on medium screens */
+  }
+
+  /* Adjust the position of REG $10 box on medium screens */
+  .registration-box {
+    top: 25%;
+    right: 5%;
+  }
+}
+
 @media (max-width: 480px) {
   .homepage-content {
     padding: 1.5rem;
+  }
+
+  .interfed-title {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+    letter-spacing: 1px;
+  }
+
+  /* Adjust the position of REG $10 box on small screens */
+  .registration-box {
+    top: 30%;
+    right: 2%;
+    width: 130px; /* Smaller width for mobile */
+  }
+
+  .registration-box h3 {
+    font-size: 1.2rem; /* Adjust heading font size */
+  }
+
+  .registration-box p {
+    font-size: 1rem; /* Adjust paragraph font size */
   }
 }
