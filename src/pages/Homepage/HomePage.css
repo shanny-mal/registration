@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative; /* For absolute positioning of the box */
 }
 
 /* Add extra margin for content */
@@ -31,31 +32,30 @@
   font-family: 'Roboto', sans-serif; /* Modern font family */
 }
 
-/* Registration box */
+/* Styling for REG $10 box */
 .registration-box {
   position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
+  top: 20%;
+  right: 10%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+  width: 150px;
   font-family: 'Roboto', sans-serif;
 }
 
 .registration-box h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #4b0082;
-  margin-bottom: 1rem;
 }
 
 .registration-box p {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #333;
+  font-size: 1.2rem;
+  color: #4b0082;
+  margin-top: 0.5rem;
 }
 
 /* Media queries for smaller screens */
@@ -69,15 +69,10 @@
     font-size: 2rem; /* Slightly smaller on medium screens */
   }
 
-  /* Move the registration box to the bottom for medium screens */
+  /* Adjust the position of REG $10 box on medium screens */
   .registration-box {
-    position: relative;
-    top: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    padding: 1.5rem;
-    text-align: center;
+    top: 25%;
+    right: 5%;
   }
 }
 
@@ -91,9 +86,20 @@
     letter-spacing: 1px;
   }
 
-  /* Move the registration box to the bottom for small screens */
+  /* Adjust the position of REG $10 box on small screens */
   .registration-box {
-    width: 90%;
-    padding: 1.5rem;
+    top: auto; /* Remove the top positioning */
+    margin-top: 20px; /* Position 20px below the card */
+    right: 2%; /* Slightly adjust right position */
+    width: 130px; /* Smaller width for mobile */
+    position: relative; /* Remove absolute positioning */
+  }
+
+  .registration-box h3 {
+    font-size: 1.2rem; /* Adjust heading font size */
+  }
+
+  .registration-box p {
+    font-size: 1rem; /* Adjust paragraph font size */
   }
 }
