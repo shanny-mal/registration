@@ -1,22 +1,24 @@
 .homepage-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #651383, #4b0082);
-  padding-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Centers content */
+  padding: 90px 20px;
 }
 
 .homepage-content {
   width: 90%;
-  max-width: 500px;
+  max-width: 550px;
   background: #fff;
   border-radius: 12px;
-  padding: 1.8rem;
-  margin: 20px;
-  text-align: center;
+  padding: 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 20px;
 }
+
 
 @media (max-width: 480px) {
   .homepage-content {
