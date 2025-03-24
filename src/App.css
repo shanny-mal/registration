@@ -2,21 +2,9 @@
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure full height */
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-
-/* Adjust the navbar to be fixed at the top */
-.navbar {
-  position: fixed; /* Fix navbar at the top */
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: #4b0082; /* Customize the navbar color */
-  z-index: 10; /* Ensure it stays above other content */
-  padding: 10px 0; /* 10px padding for the navbar */
-}
-
 /* Adjust the rest of the content to accommodate the fixed navbar */
 .registration-container {
   min-height: 100vh;
@@ -28,7 +16,6 @@ body, html {
   padding: 10px 20px; /* Only leave 10px at the top */
   position: relative;
   overflow: hidden;
-  margin-top: 50px; /* Ensure space below the fixed navbar */
 }
 
 /* Ensure all card-based components have consistent spacing */

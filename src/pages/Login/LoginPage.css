@@ -1,36 +1,29 @@
-/* Global styles for body and html */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* Adjust navbar to be fixed at the top */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: #4b0082; /* Customize navbar color */
-  z-index: 10; /* Keep navbar on top */
-  padding: 10px 0; /* 10px padding on top */
-}
-
 /* Adjust the container of the login page */
 .login-page-container {
-  min-height: 100vh;
+  min-height: 100vh; /* Ensure full height of the viewport */
   background: linear-gradient(135deg, #651383, #4b0082);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding-top: 10px; /* Only leave 10px space at the top */
+  justify-content: flex-start; /* Ensure content starts from the top */
+  padding-top: 0; /* Remove top padding */
   padding-bottom: 100px; /* Space for footer */
-  margin-top: 60px; /* Account for fixed navbar height */
+  margin-top: 0; /* Remove any top margin */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Add extra margin for the login card */
+/* Navbar styling */
+.navbar {
+  width: 100%;
+  position: fixed; /* Make navbar fixed at the top */
+  top: 0;
+  left: 0;
+  background-color: #651383; /* Adjust navbar background */
+  padding: 10px 0; /* Add padding to the navbar */
+  z-index: 1000; /* Ensure navbar stays on top of other elements */
+}
+
+/* Add space between the navbar and the login card */
 .login-card {
   background: #fff;
   border-radius: 12px;
@@ -39,7 +32,7 @@ body, html {
   padding: 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin-top: 20px; /* Extra space below navbar */
+  margin-top: 80px; /* Adjust space between navbar and form */
 }
 
 /* Form control styles */

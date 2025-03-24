@@ -1,7 +1,11 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../components/context/AuthContext"; // Import the custom hook
 
-const ProtectedRoute = ({ isAuthenticated, isAdmin, adminOnly, children }) => {
+const ProtectedRoute = ({ adminOnly, children }) => {
+  // Get auth state from the context
+  const { isAuthenticated, isAdmin } = useAuth();
+
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }

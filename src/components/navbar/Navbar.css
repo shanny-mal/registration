@@ -14,11 +14,8 @@
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   margin: 0; /* Remove any margins */
-  padding: 0; /* Ensure no extra padding */
-}
-
-
-/* Navbar Sections */
+  padding: 10 0; /* Ensure no extra padding */
+}/* Navbar Sections */
 .navbar-left,
 .navbar-right {
   display: flex;

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { AuthContext } from "../../components/context/AuthContext"; // Import AuthContext
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import "./LoginPage.css";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext); // Use login function from AuthContext
   const {
     register,
     handleSubmit,
@@ -27,13 +29,8 @@ const LoginPage = () => {
         }
       );
 
-      // Save authentication details
-      localStorage.setItem("authToken", response.data.access);
-      localStorage.setItem("refreshToken", response.data.refresh);
-      localStorage.setItem(
-        "isAdmin",
-        response.data.user.is_admin ? "true" : "false"
-      );
+      // Use AuthContext to handle login state
+      login(response.data.access, response.data.user.is_admin); // Call login from context
 
       alert("Login successful!");
 

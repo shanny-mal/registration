@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
 
   return (
     <nav className="navbar">
@@ -24,46 +25,27 @@ const Navbar = () => {
 
       {/* Right - Buttons and Hamburger Menu */}
       <div className="navbar-right">
-        {/* Desktop Buttons */}
         <div className="navbar-buttons">
-          {/* Home Button */}
-          <Link to="/">
-            <button className="navbar-button">Home</button>
-          </Link>
-          <Link to="/login">
-            <button className="navbar-button">Login</button>
-          </Link>
-          <Link to="/register">
-            <button className="navbar-button">Register</button>
-          </Link>
-        </div>
-
-        {/* SYL Logo */}
-        <img src="/SYL-logo.png" alt="SYL Logo" className="navbar-logo" />
-
-        {/* Hamburger Menu (Mobile) */}
-        <div
-          className="navbar-menu-icon"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
+          {/* Show buttons based on authentication status */}
+          {!isAuthenticated ? (
+            <>
+              <Link to="/">
+                <button className="navbar-button">Home</button>
+              </Link>
+              <Link to="/login">
+                <button className="navbar-button">Login</button>
+              </Link>
+              <Link to="/register">
+                <button className="navbar-button">Register</button>
+              </Link>
+            </>
+          ) : (
+            <button onClick={logout} className="navbar-button">
+              Logout
+            </button>
+          )}
         </div>
       </div>
-
-      {/* Mobile Dropdown Menu */}
-      {menuOpen && (
-        <div className="mobile-menu">
-          <Link to="/" onClick={() => setMenuOpen(false)}>
-            <button className="navbar-button">Home</button>
-          </Link>
-          <Link to="/login" onClick={() => setMenuOpen(false)}>
-            <button className="navbar-button">Login</button>
-          </Link>
-          <Link to="/register" onClick={() => setMenuOpen(false)}>
-            <button className="navbar-button">Register</button>
-          </Link>
-        </div>
-      )}
     </nav>
   );
 };

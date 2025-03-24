@@ -1,32 +1,11 @@
-/* Apply to all pages */
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* Adjust navbar to be fixed at the top */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background-color: #4b0082; /* Customize navbar color */
-  z-index: 10; /* Keep navbar on top */
-  padding: 10px 0; /* 10px padding on top */
-}
-
-/* Ensure content starts below the navbar on the login page */
 .homepage-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #651383, #4b0082);
-  padding-top: 10px; /* Keep only 10px space from the top */
+  padding-top: 0; /* Remove padding from the top */
   padding-bottom: 100px; /* Space for footer */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px; /* Space for fixed navbar */
 }
 
 /* Add extra margin for content */

@@ -1,11 +1,24 @@
+/* Navbar styling */
+.navbar {
+  width: 100%;
+  position: fixed; /* Make navbar fixed at the top */
+  top: 0;
+  left: 0;
+  background-color: #651383; /* Adjust navbar background */
+  padding: 10px 0; /* Add padding to the navbar */
+  z-index: 1000; /* Ensure navbar stays on top of other elements */
+}
+
+/* Adjust the registration card and ensure space between navbar and form */
 .registration-card {
   background: #ffffff;
   border-radius: 12px;
   width: 100%;
-  max-width: 500px; /* Reduced max width for better scaling */
+  max-width: 500px; /* Adjusted max width */
   padding: 1.8rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  margin: 80px auto; /* Adjusted spacing for fixed navbar/footer */
+  margin-top: 90px; /* Space between navbar and form */
+  margin-bottom: 100px; /* Space between form and footer */
   transition: all 0.3s ease-in-out;
 }
 
@@ -73,7 +86,7 @@
   font-size: 0.85rem;
 }
 
-/* ✅ Mobile Responsive Adjustments */
+/* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
   .registration-card {
     margin: 90px 15px;
