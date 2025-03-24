@@ -1,0 +1,9 @@
+.registration-page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #651383, #4b0082);
+  padding-top: 100px; /* to accommodate fixed navbar */
+  padding-bottom: 100px; /* for fixed footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

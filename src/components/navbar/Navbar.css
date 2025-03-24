@@ -17,8 +17,9 @@
   overflow: hidden;
 }
 
-/* 📌 Navbar Sections */
-.navbar-left, .navbar-right {
+/* Navbar Sections */
+.navbar-left,
+.navbar-right {
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -27,15 +28,18 @@
 .navbar-center {
   flex-grow: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
 }
 
-/* 📌 Logos */
+/* Logos */
 .navbar-logo {
   width: 55px; /* Adjusted for visibility */
   height: auto;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-left: 8px;
 }
 
 .navbar-logo:hover {
@@ -43,24 +47,46 @@
   opacity: 1;
 }
 
-/* 📌 Title */
+/* Titles */
 .navbar-title {
   font-size: 1.2rem;
   font-weight: 600;
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0;
 }
 
-/* 🔥 Responsive Design */
+.navbar-subtitle {
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  margin: 2px 0 0;
+}
+
+/* Navbar Buttons */
+.navbar-button {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.navbar-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
   .navbar-title {
     font-size: 1.1rem;
   }
-
   .navbar-logo {
     width: 50px;
   }
@@ -71,32 +97,36 @@
     height: 80px;
     padding: 8px 12px;
   }
-
   .navbar-title {
     font-size: 1rem;
     max-width: 80%;
     text-align: center;
   }
-
   .navbar-logo {
     width: 45px;
+  }
+  .navbar-button {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    margin-right: 6px;
   }
 }
 
 @media (max-width: 480px) {
   .navbar {
     height: 75px;
-    flex-direction: row;
-    justify-content: space-between;
     padding: 6px 10px;
   }
-
   .navbar-logo {
-    width: 40px; /* Smaller for mobile */
+    width: 40px;
   }
-
   .navbar-title {
     font-size: 0.85rem;
     max-width: 70%;
+  }
+  .navbar-button {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    margin-right: 4px;
   }
 }

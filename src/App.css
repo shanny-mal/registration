@@ -1,24 +1,11 @@
 .registration-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #651383, #4b0082); /* Smooth Gradient for Depth */
+  background: linear-gradient(135deg, #651383, #4b0082);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centers the content */
-  padding: 80px 20px; /* Improved padding for better spacing */
+  padding-top: 100px; /* Space for fixed navbar */
+  padding-bottom: 100px; /* Space for fixed footer */
   position: relative;
-  overflow: hidden; /* Prevents unwanted scroll issues */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .registration-container {
-    padding: 70px 15px; /* Adjust padding for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .registration-container {
-    padding: 60px 10px; /* Further reduced padding */
-  }
+  overflow: hidden;
 }

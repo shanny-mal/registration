@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
+import Navbar from "../../components/navbar/Navbar";
 import RegistrationCard from "./RegistrationCard";
-import Footer from "../footer/Footer";
-import "../App.css";
+import Footer from "../../components/footer/Footer";
+import "../../App.css";
 
 const RegistrationPage = () => {
   return (

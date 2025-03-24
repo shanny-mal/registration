@@ -1,0 +1,29 @@
+.user-panel-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #651383, #4b0082);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-content {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+.user-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-content li {
+  padding: 5px 0;
+  font-size: 0.95rem;
+}
