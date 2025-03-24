@@ -26,6 +26,10 @@ const Navbar = () => {
       <div className="navbar-right">
         {/* Desktop Buttons */}
         <div className="navbar-buttons">
+          {/* Home Button */}
+          <Link to="/">
+            <button className="navbar-button">Home</button>
+          </Link>
           <Link to="/login">
             <button className="navbar-button">Login</button>
           </Link>
@@ -49,6 +53,9 @@ const Navbar = () => {
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <div className="mobile-menu">
+          <Link to="/" onClick={() => setMenuOpen(false)}>
+            <button className="navbar-button">Home</button>
+          </Link>
           <Link to="/login" onClick={() => setMenuOpen(false)}>
             <button className="navbar-button">Login</button>
           </Link>

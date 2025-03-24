@@ -1,3 +1,23 @@
+/* Global styles for body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Adjust navbar to be fixed at the top */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #4b0082; /* Customize navbar color */
+  z-index: 10; /* Keep navbar on top */
+  padding: 10px 0; /* 10px padding on top */
+}
+
+/* Adjust the container of the login page */
 .login-page-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #651383, #4b0082);
@@ -5,10 +25,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 100px; /* Ensure space below navbar */
+  padding-top: 10px; /* Only leave 10px space at the top */
   padding-bottom: 100px; /* Space for footer */
+  margin-top: 60px; /* Account for fixed navbar height */
 }
-
 
 /* Add extra margin for the login card */
 .login-card {
@@ -22,6 +42,7 @@
   margin-top: 20px; /* Extra space below navbar */
 }
 
+/* Form control styles */
 .form-control {
   width: 100%;
   padding: 10px;
@@ -30,6 +51,7 @@
   font-size: 1rem;
 }
 
+/* Submit button styling */
 .btn-submit {
   width: 100%;
   padding: 10px;
